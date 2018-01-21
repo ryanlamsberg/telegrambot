@@ -1,4 +1,3 @@
-
 const TeleBot = require('telebot');
 
 const bot = new TeleBot({
@@ -6,17 +5,35 @@ const bot = new TeleBot({
 });
 
 bot.on(/start/, function (msg) {
-  return bot.sendMessage(msg.from.id, "Hello world!");
+  return bot.sendMessage(msg.from.id, "Hoeveel pret beleef jij op een dag?");
 });
 bot.on(/wie ben jij/, function (msg) {
   return bot.sendMessage(msg.from.id, "Ik ben een vervelend bolletje uit Star Wars.");
 });
-bot.on(/je moeder/, function (msg) {
-  return bot.sendMessage(msg.from.id, "Is vast een hele lieve vrouw!");
-});
 bot.on(/Joli-Coeur/, function (msg) {
   return bot.sendMessage(msg.from.id, "Hij is cool!");
 });
+bot.on(/in bed$/, function (msg) {
+  return bot.sendMessage(msg.from.id, "heb je heel veel pret!");
+});
+bot.on(/hoe gaat het$/, function (msg) {
+  return bot.sendMessage(msg.from.id, "zeer goed met jou?");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 bot.on(/(.+)/, function (msg, props) {
   var text = props.match[1];
